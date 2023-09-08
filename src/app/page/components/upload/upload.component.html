@@ -1,0 +1,30 @@
+<div *ngIf="loading" class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div>
+    <mat-form-field style="width: 100%;">
+        <mat-toolbar>
+          <input matInput [value]="fileName" />
+          <button mat-button color="primary" (change)="onSelect($event)" ></button>
+          <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+        </mat-toolbar>  
+        <input
+          type="file"
+          class="file-input"
+          (change)="onSelect($event)" #fileUpload
+        />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field style="width: 100%;">
+      <h1 *ngIf="!disabledTextArea" >Resultado consolidado na busca com a sigla SE</h1>
+      <textarea [disabled]="disabledTextArea"
+        class="textarea"
+        matInput
+        rows="20"
+        [textContent]="findResult | json"
+        required
+        readonly
+      ></textarea>
+    </mat-form-field>
+  </div>
