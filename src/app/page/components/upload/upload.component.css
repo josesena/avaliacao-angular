@@ -2,15 +2,6 @@
     width: 600px;
   }
 
-  .message {
-    background-color: #ddd;
-    padding: 15px;
-    color: #333;
-    border: #aaa solid 1px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-
   .file-input {
     position: absolute;
     cursor: pointer;
